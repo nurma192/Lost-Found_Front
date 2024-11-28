@@ -11,9 +11,9 @@ function Layout() {
                     <Outlet />
                 </div>
             </div>
-            <footer className="w-full flex justify-center py-5 bg-[#333] text-white">
-                Footer
-            </footer>
+            {/*<footer className="w-full flex justify-center py-5 bg-[#333] text-white">*/}
+            {/*    Footer*/}
+            {/*</footer>*/}
         </>
     );
 }

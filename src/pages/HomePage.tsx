@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useCategoriesData} from "../api/categoriesApi";
+import {useLostItems} from "../api/lostItemsApi";
 
 function HomePage() {
     const categoriesData = useCategoriesData();
@@ -9,6 +10,8 @@ function HomePage() {
     //     console.log(categoriesData.data)
     // }, [categoriesData.isSuccess]);
 
+    const lostItems = useLostItems()
+    console.log(lostItems)
 
     return (
         <>
@@ -54,8 +57,14 @@ function HomePage() {
                         </div>
                     </div>
 
-                    <div className="">
-
+                    <div className="pl-4 grid grid-cols-4">
+                        {lostItems.isSuccess && lostItems?.data.lostItems.map((lostItem, index) => (
+                            <div key={index} className={`p-5 border border-l-neutral-400 cursor-pointer`}>
+                                <p>{lostItem.name}</p>
+                                <p>{lostItem._id}</p>
+                                <p>{lostItem.user}</p>
+                            </div>
+                        ))}
                     </div>
 
                 </div>
