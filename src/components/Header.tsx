@@ -27,9 +27,9 @@ function Header() {
         }
     }, [auth.isAuthenticated, auth.token]);
 
-    useEffect(() => {
-        console.log("auth",auth)
-    }, [auth]);
+    // useEffect(() => {
+    //     console.log("auth",auth)
+    // }, [auth]);
 
     return (
         <header className="w-full flex justify-around items-center gap-5 py-5 text-white">

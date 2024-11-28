@@ -7,7 +7,9 @@ function Layout() {
         <>
             <Header />
             <div className="w-full flex justify-center py-5">
-                <Outlet />
+                <div className="w-10/12 flex justify-center">
+                    <Outlet />
+                </div>
             </div>
             <footer className="w-full flex justify-center py-5 bg-[#333] text-white">
                 Footer
