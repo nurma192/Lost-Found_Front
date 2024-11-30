@@ -1,8 +1,9 @@
 import {useQuery} from "react-query";
 import {Categories} from "../types/categories";
+import {useCustomParams} from "../hooks/useCustomParams";
 
-export const getCategories = async (): Promise<Categories[]> => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/categories`);
+export const getCategories = async (query: string = ''): Promise<Categories[]> => {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/categories${!!query ? '?query='+query : ''}`);
 
     if (!response.ok) {
         throw new Error('Failed to fetch Categories data');
@@ -12,5 +13,6 @@ export const getCategories = async (): Promise<Categories[]> => {
 }
 
 export const useCategoriesData = () => {
-    return useQuery<Categories[]>('categories', getCategories);
+    const customParams = useCustomParams()
+    return useQuery<Categories[]>('categories', () => getCategories(customParams.getQueryFromParam()));
 };

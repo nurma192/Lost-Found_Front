@@ -1,18 +1,24 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import LostItems from "../components/LostItems";
 import FoundItems from "../components/FoundItems";
 import CategoriesList from "../components/CategoriesList";
-import {useSearchParams} from "react-router-dom";
+import {useCustomParams} from "../hooks/useCustomParams";
 
 function HomePage() {
-    const [subPage, setSubPage] = useState('lostPage') // lostPage || foundPage
-    const [searchParams, setSearchParams] = useSearchParams()
+    const customParams = useCustomParams()
+    const [subPage, setSubPage] = useState<('lost' | 'found')>(customParams.getTypeFromParam()) // lost || found
 
-    const handleSetSubPage = (pageName: string) => {
-        searchParams.delete("category")
-        setSearchParams(searchParams)
-        setSubPage(pageName)
+
+    const handleSetSubPage = (pageName: ('lost' | 'found')) => {
+        const currentParams = new URLSearchParams(customParams.searchParams);
+        currentParams.set('type', pageName);
+        currentParams.delete('category');
+        customParams.setSearchParams(currentParams);
     }
+
+    useEffect(() => {
+        setSubPage(customParams.getTypeFromParam())
+    },[customParams.searchParams])
 
     return (
         <>
@@ -24,13 +30,13 @@ function HomePage() {
                 <div className="w-4/5 pl-8 flex flex-col">
                     <div className="flex justify-between">
                         <div className="flex">
-                            <button className="px-4 py-2" onClick={() => handleSetSubPage("lostPage")}>
-                                <h3 className={`border-b-3 ${subPage === 'lostPage' ? 'border-blue-500 text-blue-500 font-bold' : 'border-white'}`}>Lost
-                                    Items</h3>
+                            <button className="px-4 py-2" onClick={() => handleSetSubPage("lost")}>
+                                <h3 className={`border-b-3 ${subPage === 'lost' ? 'border-blue-500 text-blue-500 font-bold' : 'border-white'}`}>
+                                    Lost Items</h3>
                             </button>
-                            <button className="px-4 py-2" onClick={() => handleSetSubPage("foundPage")}>
-                                <h3 className={`border-b-3 ${subPage === 'foundPage' ? 'border-blue-500 text-blue-500 font-bold' : 'border-white'}`}>Found
-                                    Items</h3>
+                            <button className="px-4 py-2" onClick={() => handleSetSubPage("found")}>
+                                <h3 className={`border-b-3 ${subPage === 'found' ? 'border-blue-500 text-blue-500 font-bold' : 'border-white'}`}>
+                                    Found Items</h3>
                             </button>
                         </div>
                         <div className="">
@@ -39,8 +45,8 @@ function HomePage() {
                     </div>
 
                     <div className="pl-4 ">
-                        {subPage === 'lostPage' && <LostItems/>}
-                        {subPage === 'foundPage' && <FoundItems/>}
+                        {subPage === 'lost' && <LostItems/>}
+                        {subPage === 'found' && <FoundItems/>}
                     </div>
 
                 </div>
