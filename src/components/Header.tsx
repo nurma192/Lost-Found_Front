@@ -1,35 +1,20 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useRef} from 'react';
 import MyLink from "./ui/MyLink";
 import MyButton from "./ui/MyButton";
 import {useAuth} from "../hooks/useAuth";
-import {getUserData} from "../api/usersApi";
-import {User} from "../types/userTypes";
+import {useUserData} from "../api/usersApi";
+import {CircularProgress} from "@nextui-org/react";
 
 function Header() {
     const inputRef = useRef<HTMLInputElement>(null);
     const auth = useAuth()
-    const [user, setUser] = useState<User | null>(null)
+    const userData = useUserData(auth.token)
 
     const handleFocus = (): void => {
         if (inputRef.current) {
             inputRef.current.focus();
         }
     };
-    useEffect(() => {
-        if (auth.isAuthenticated) {
-            getUserData(auth.token)
-                .then(data => {
-                    setUser(data)
-                })
-                .catch(err => {
-                    console.log(err);
-                })
-        }
-    }, [auth.isAuthenticated, auth.token]);
-
-    // useEffect(() => {
-    //     console.log("auth",auth)
-    // }, [auth]);
 
     return (
         <header className="w-full flex justify-around items-center gap-5 py-5 text-white">
@@ -75,7 +60,8 @@ function Header() {
                 </div>
                 <MyButton color="primary" className="flex justify-center items-center h-8 px-5">
                     <img className="w-4" src="/icons/profileIcon.svg" alt="profile"/>
-                    <p className="">{user?.email}</p>
+                    <p className="">{userData.data?.email}</p>
+                    {userData.isLoading && <CircularProgress color="warning" aria-label="Loading..."/>}
                 </MyButton>
             </div>
         </header>

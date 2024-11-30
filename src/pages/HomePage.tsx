@@ -1,55 +1,36 @@
 import React, {useState} from 'react';
-import {useCategoriesData} from "../api/categoriesApi";
-import {useLostItems} from "../api/lostItemsApi";
+import LostItems from "../components/LostItems";
+import FoundItems from "../components/FoundItems";
+import CategoriesList from "../components/CategoriesList";
+import {useSearchParams} from "react-router-dom";
 
 function HomePage() {
-    const categoriesData = useCategoriesData();
-    const [selectedCategoryId, setSelectedCategoryId] = useState('')
-    const [subPage, setSubPage] = useState('lostPage')
-    // useEffect(() => {
-    //     console.log(categoriesData.data)
-    // }, [categoriesData.isSuccess]);
+    const [subPage, setSubPage] = useState('lostPage') // lostPage || foundPage
+    const [searchParams, setSearchParams] = useSearchParams()
 
-    const lostItems = useLostItems()
-    console.log(lostItems)
+    const handleSetSubPage = (pageName: string) => {
+        searchParams.delete("category")
+        setSearchParams(searchParams)
+        setSubPage(pageName)
+    }
 
     return (
         <>
             <div className=" w-full flex items-start">
                 <div className="w-1/5 px-5">
-                    <>
-                        {categoriesData.isLoading && <h3>Loading ...</h3>}
-                    </>
-                    <>
-                        {categoriesData.error && <h3>Error when get Categories</h3>}
-                    </>
-                    <>
-                        {categoriesData.isSuccess &&
-							<>
-								<h3 className="font-bold text-lg text-neutral-700">Categories</h3>
-								<div className="flex flex-col justify-start gap-2 ml-4 mt-2">
-                                    {categoriesData.data.map(category => (
-                                        <div className={`cursor-pointer flex justify-between ${selectedCategoryId === category.id && 'text-blue-500 font-bold'}`}
-                                             onClick={() => setSelectedCategoryId(category.id)}
-                                             key={category.id}>
-                                            <p>{category.name}</p>
-                                            <p> ({category.lostItemsCount})</p>
-                                        </div>
-                                    ))}
-								</div>
-							</>
-                        }
-                    </>
+                    {<CategoriesList pageNameState={subPage}/>}
 
                 </div>
                 <div className="w-4/5 pl-8 flex flex-col">
                     <div className="flex justify-between">
                         <div className="flex">
-                            <button className="px-4 py-2" onClick={() => setSubPage("lostPage")}>
-                                <h3 className={`border-b-4 ${subPage === 'lostPage' ? 'border-blue-500 text-blue-500 font-bold' : 'border-white'}`}>Lost Items</h3>
+                            <button className="px-4 py-2" onClick={() => handleSetSubPage("lostPage")}>
+                                <h3 className={`border-b-3 ${subPage === 'lostPage' ? 'border-blue-500 text-blue-500 font-bold' : 'border-white'}`}>Lost
+                                    Items</h3>
                             </button>
-                            <button className="px-4 py-2" onClick={() => setSubPage("foundPage")}>
-                                <h3 className={`border-b-4 ${subPage === 'foundPage' ? 'border-blue-500 text-blue-500 font-bold' : 'border-white'}`}>Found Items</h3>
+                            <button className="px-4 py-2" onClick={() => handleSetSubPage("foundPage")}>
+                                <h3 className={`border-b-3 ${subPage === 'foundPage' ? 'border-blue-500 text-blue-500 font-bold' : 'border-white'}`}>Found
+                                    Items</h3>
                             </button>
                         </div>
                         <div className="">
@@ -57,14 +38,9 @@ function HomePage() {
                         </div>
                     </div>
 
-                    <div className="pl-4 grid grid-cols-4">
-                        {lostItems.isSuccess && lostItems?.data.lostItems.map((lostItem, index) => (
-                            <div key={index} className={`p-5 border border-l-neutral-400 cursor-pointer`}>
-                                <p>{lostItem.name}</p>
-                                <p>{lostItem._id}</p>
-                                <p>{lostItem.user}</p>
-                            </div>
-                        ))}
+                    <div className="pl-4 ">
+                        {subPage === 'lostPage' && <LostItems/>}
+                        {subPage === 'foundPage' && <FoundItems/>}
                     </div>
 
                 </div>
