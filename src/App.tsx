@@ -1,6 +1,5 @@
-import './App.css';
 import { NextUIProvider } from "@nextui-org/react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Layout from "./Layout/Layout";
 import Auth from "./pages/Auth";
 import ProtectedRoute from "./context/ProtectedRoute";
@@ -12,7 +11,7 @@ function App() {
     return (
         <QueryClientProvider client={queryClient}>
             <NextUIProvider>
-                <Router>
+                <BrowserRouter>
                     <Routes>
                         <Route element={<ProtectedRoute />}>
                             <Route path="/" element={<Layout />}>
@@ -26,7 +25,7 @@ function App() {
                         <Route path="/login" element={<Auth />} />
                         <Route path="/register" element={<Auth/>}/>
                     </Routes>
-                </Router>
+                </BrowserRouter>
             </NextUIProvider>
         </QueryClientProvider>
     );
