@@ -22,9 +22,11 @@ function LostItems() {
 
     if (isLoading || isFetching) {
         return <>
-            {Array.from({length: 16}).map((_, index) => (
-                <SkeletonCard key={index}/>
-            ))}
+            <div className="grid grid-cols-4 gap-8 mt-5">
+                {Array.from({length: 16}).map((_, index) => (
+                    <SkeletonCard key={index}/>
+                ))}
+            </div>
         </>
     }
     if (error) return <h3>Error</h3>
