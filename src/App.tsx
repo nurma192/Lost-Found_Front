@@ -6,6 +6,7 @@ import ProtectedRoute from "./context/ProtectedRoute";
 import {QueryClientProvider} from "react-query";
 import queryClient from "./queryClient";
 import HomePage from "./pages/HomePage";
+import AddItem from "./pages/AddItem";
 
 function App() {
     return (
@@ -17,7 +18,7 @@ function App() {
                             <Route path="/" element={<Layout />}>
                                 <Route index element={<HomePage />} />
                                 <Route path="/items" element={<div>See Items</div>} />
-                                <Route path="/add-item" element={<div>Add Item</div>} />
+                                <Route path="/add-item" element={<AddItem />} />
                                 <Route path="/support" element={<div>Support</div>} />
                             </Route>
                         </Route>

@@ -24,8 +24,11 @@ function Auth() {
                 <p className="text-gray-600 text-xs">
                     {location.pathname === "/register" ? "Enter your email and password to register." : "Enter your username and password to login."}
                 </p>
+
                 {location.pathname === "/login" && <LoginForm />}
                 {location.pathname === "/register" && <RegisterForm />}
+
+
                 <div className="flex flex-col items-center gap-2 mt-4 justify-center">
                     <div className="flex w-full items-center gap-2">
                         <div className="border-t h-[1px] flex-auto"></div>

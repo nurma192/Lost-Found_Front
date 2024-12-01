@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb6a87ad-c57d-414b-bf97-3b953d107643" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="bb6a87ad-c57d-414b-bf97-3b953d107643" name="Changes" comment="fixes">
+      <change afterPath="$PROJECT_DIR$/public/icons/addPhoto-scelet.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/addItemApi.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MyImageSlider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/MyInput.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/MyMiniImage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AddItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/0.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/0.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/1.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/1.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/10.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/10.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/11.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/11.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/12.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/12.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/13.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/13.pack" afterDir="false" />
@@ -18,7 +24,12 @@
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/16.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/16.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/17.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/17.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/18.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/18.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/19.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/19.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/2.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/2.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/20.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/20.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/21.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/21.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/22.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/22.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/23.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/23.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/3.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/3.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/4.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/4.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/5.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/5.pack" afterDir="false" />
@@ -29,14 +40,17 @@
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/index.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/index.pack.old" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/tsconfig.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/tsconfig.tsbuildinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/categoriesApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/categoriesApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@nextui-org/input/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@nextui-org/input/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/foundItemsApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/foundItemsApi.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CategoriesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CategoriesList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FoundItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FoundItems.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LostItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LostItems.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useCustomParams.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useCustomParams.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/LoginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Auth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Auth.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +87,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/nurmakhanbetkenes/Desktop/MineFolder/Projects/lost-and-found&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/nurmakhanbetkenes/Desktop/MineFolder/Projects/lost-and-found/public/icons&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
@@ -202,7 +216,31 @@
       <option name="project" value="LOCAL" />
       <updated>1732985178020</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="categories counts from request Type">
+      <option name="closed" value="true" />
+      <created>1733006134375</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1733006134375</updated>
+    </task>
+    <task id="LOCAL-00012" summary="changes">
+      <option name="closed" value="true" />
+      <created>1733006170863</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1733006170863</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1733006226129</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1733006226129</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +268,9 @@
     <MESSAGE value="create CategoriesList.tsx" />
     <MESSAGE value="create lostItemsApi foundItemsApi and components" />
     <MESSAGE value="change userApi logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="change userApi logic" />
+    <MESSAGE value="categories counts from request Type" />
+    <MESSAGE value="changes" />
+    <MESSAGE value="fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
   </component>
 </project>

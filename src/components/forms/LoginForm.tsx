@@ -15,7 +15,7 @@ function LoginForm() {
 
     const [error, setError] = useState<string>('');
     const loginForm = useForm<LoginFormBody>()
-    const onSubmitLogin: SubmitHandler<LoginFormBody> = async (data) => {
+    const onSubmitLogin = async (data: LoginFormBody) => {
         console.log(data);
         const res = await fetch(`${process.env.REACT_APP_API_URL}/api/signin`, {
             method: "POST",
@@ -27,7 +27,7 @@ function LoginForm() {
         const json = await res.json();
         if (!res.ok) {
             setError(json.message);
-        }else{
+        } else {
             auth.login(json.token)
             navigate('/')
         }

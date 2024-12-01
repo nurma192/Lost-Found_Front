@@ -12,6 +12,7 @@ export interface FoundItemsRequest {
 export const getFoundItems = async (category: string = '', query: string = '', page: number = -1): Promise<FoundItemsRequest> => {
     const url = new URL(`${process.env.REACT_APP_API_URL}/api/found`);
     const params = new URLSearchParams();
+
     if (category) params.append('category', category);
     if (query) params.append('query', query);
     if (page > 0) params.append('page', page.toString());
@@ -31,5 +32,5 @@ export const getFoundItems = async (category: string = '', query: string = '', p
 export const useFoundItems = () => {
     const customParams = useCustomParams()
 
-    return useQuery<FoundItemsRequest>('foundItems', () => getFoundItems(customParams.getCategoryFromParam(), customParams.getQueryFromParam()));
+    return useQuery<FoundItemsRequest>('foundItems', () => getFoundItems(customParams.getCategoryFromParam(), customParams.getQueryFromParam(), customParams.getPageFromParam()));
 };

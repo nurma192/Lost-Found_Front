@@ -8,10 +8,21 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			colors:{
+				primary: '#3b83f6',
+			},
 			fontFamily: {
 				'cera': ['"Cera Pro Regular"', 'sans-serif'], // Use "Cera Pro" as the base font family
 			},
 		},
 	},
-	plugins: [nextui()],
+	plugins: [nextui({
+		theme: {
+			extend: {
+				colors: {
+					primary: '#3b83f6',
+				},
+			},
+		},
+	})],
 };
